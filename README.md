@@ -5,9 +5,6 @@ to build and execute:
 ./build_tests_and_app.sh && ./run_tests_and_app.sh
 
 complexity:
-- find position to insert in vector: O(ln2)
-- insert into vector: O(n), 
-
-I choose the logarithmic 'pos find' even if I insert into vector in linear time to
-save linear int comparisions (small preoptimization :))
+- insert number into heap log2(n) [+ log2(n) (for insert first heap root into the
+  other heap) + n (during removing root from first heap)] 
 
