@@ -1,6 +1,6 @@
 #pragma once
 
-#include "SortedNumbersStream.h"
+#include "Heap.h"
 
 #include <iostream>
 #include <string>
@@ -12,8 +12,13 @@ class App
   void run(const std::string& appInput);
 
  private:
+  void consume(int number);
+
+  double getMedian() const;
+
   std::ostream& out_;
 
-  SortedNumbersStream sns_;
+  MaxHeap left_;
+  MinHeap right_;
 };
 

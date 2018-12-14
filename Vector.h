@@ -71,6 +71,23 @@ class Vector final {
     buff_[index] = value;
   }
 
+  void popFront() {
+    assert(size_ > 0);
+
+    --size_;
+    for (auto i = 0u; i < size_; ++i) buff_[i] = buff_[i + 1];
+  }
+
+  void pushBack(T value) { insertAt(size_, value); }
+
+  void swap(unsigned index1, unsigned index2) {
+    assert(index1 < size_ && index2 < size_);
+
+    auto temp = buff_[index1];
+    buff_[index1] = buff_[index2];
+    buff_[index2] = temp;
+  }
+
  private:
   unsigned capacity_{0};
 

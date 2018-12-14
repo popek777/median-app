@@ -6,7 +6,6 @@ project (median-app)
 
 add_executable(median-app 
   main.cpp
-  SortedNumbersStream.cpp
   App.cpp)
 
 target_link_libraries(median-app pthread)
@@ -45,11 +44,11 @@ endif()
 
 # Now simply link against gtest or gtest_main as needed. Eg
 add_executable(median-app-test 
-  SortedNumbersStream.cpp 
-  SortedNumbersStream_test.cpp
   Vector_test.cpp
   App.cpp
-  App_test.cpp)
+  App_test.cpp
+  Heap_test.cpp
+  )
 target_link_libraries(median-app-test gtest_main)
 
 install (TARGETS median-app DESTINATION bin)
